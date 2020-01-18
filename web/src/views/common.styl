@@ -1,0 +1,410 @@
+@import './theme.styl'
+
+*
+  margin 0
+  padding 0
+  box-sizing border-box
+  font-family "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif
+
+::-webkit-scrollbar
+  width 8px
+  height 8px
+  border-radius 8px
+  background-color rgba(210, 210, 210, 0)
+
+::-webkit-scrollbar-thumb
+  width 8px
+  border-radius 8px
+  box-shadow inset 0 0 2px rgba(199, 205, 200, 0.2)
+  background-color rgba(199, 205, 200, 0.2)
+  cursor pointer
+  &:hover
+    background-color #a0aabd
+
+common-element-css()
+  .el-button
+    height 36px
+    line-height 35px
+    background-color weight-background-color
+    border-radius 3px
+    color white
+    border 1px solid weight-border-color
+    vertical-align middle
+    padding 0 18px
+    font-size 15px
+    box-shadow normal-box-shadow
+    &.weight-button
+      background-color weight-background-color
+      color weight-text-color
+      border 1px solid weight-border-color
+    &.light-button
+      background-color light-background-color
+      color light-text-color
+      border 1px solid light-border-color
+    &.search-button
+      margin-left -4px
+      border-radius 0 3px 3px 0
+    &:hover
+      background-color hover-background-color
+      border 1px solid hover-border-color
+      color hover-text-color
+      box-shadow 0 0 4px hover-box-shadow
+    &.is-disabled
+      background-color disabled-background-color
+      border 1px solid disabled-border-color
+      color disabled-text-color
+      box-shadow normal-box-shadow
+      &:hover
+        background-color disabled-background-color
+        border 1px solid disabled-border-color
+        color disabled-text-color
+        box-shadow normal-box-shadow
+  .el-input__inner
+    border-radius 1px
+    &:hover
+      border-color hover-border-color
+    &:focus
+      border-color active-border-color
+  .el-input
+    vertical-align middle
+    &.search-input
+      .el-input__inner
+        border-radius 0
+    .el-input__inner
+      height 36px
+      line-height 36px
+  .el-form-item
+    margin-bottom 12px
+    .el-form-item__label
+      font-size 12px
+      color #687E99
+      width 100px
+    .el-form-item__content
+      display inline-block
+    &.is-success
+      .el-input__inner
+        border-color #DCDFE6
+        &:focus
+          border-color active-border-color
+  .el-select
+    vertical-align middle
+    .el-input
+      &.is-focus
+        .el-input__inner
+          border-color weight-border-color
+    .el-input__inner
+      &:hover, &:focus
+        border-color hover-border-color
+    &:hover
+      border-color hover-border-color
+      .el-input__inner
+        border-color hover-border-color
+  .el-select-dropdown__item
+    &.selected
+      color weight-background-color
+  .el-range-editor
+    width 370px
+    height 36px
+    vertical-align middle
+    &.is-active
+      border-color active-border-color
+      &:hover
+        border-color active-border-color
+    .el-range-input
+      margin-top 2px
+      width 45%
+      .is-active
+      border-color active-border-color
+      &:hover
+        border-color hover-border-color
+  .el-date-editor
+    .el-range-separator
+      line-height 30px
+      width unset
+  .el-date-table
+      td
+        &.end-date, &.start-date
+          span
+            background-color active-background-color
+        &.available
+          &:hover
+            color active-background-color
+        &.today
+          span
+            color active-background-color
+  .el-pagination__sizes
+    .el-input
+      .el-input__inner
+        &:hover
+          border-color active-background-color
+  .el-pagination
+    padding unset
+    .el-input__inner
+      border-radius unset
+    &.is-background
+      .el-pager
+        li:not(.active)
+          &:hover
+            color active-background-color
+        li:not(.disabled)
+          &.active
+            background-color active-background-color
+
+  .el-radio__input
+    &.is-checked
+      +.el-radio__label
+        color active-background-color
+      .el-radio__inner
+        background active-background-color
+        border-color active-border-color
+  .el-card
+    &.is-always-shadow, .el-card.is-hover-shadow:focus, .el-card.is-hover-shadow:hover
+      box-shadow unset
+  .el-radio-button__inner
+    padding 10px 20px
+    line-height 15px
+  .el-radio-button__orig-radio:checked+.el-radio-button__inner
+    background-color active-background-color
+    border-color active-border-color
+    box-shadow -1px 0 0 0 active-border-color
+  .el-checkbox__input
+    &.is-checked+
+      .el-checkbox__label
+        color active-background-color
+    &.is-checked
+      .el-checkbox__inner
+        background-color active-background-color
+        border-color active-border-color!important
+    &.is-focus
+      .el-checkbox__inner
+        border-color #DCDFD9
+    &.is-indeterminate
+      .el-checkbox__inner
+        background-color active-background-color
+        border-color active-border-color
+  .el-checkbox
+    font-weight unset
+    color #a7a5c2
+  .el-checkbox__inner
+    &:hover
+      border-color active-border-color
+  .el-carousel__indicator, .el-carousel__indicator--horizontal
+    padding 0 8px
+  .el-carousel__button
+    background-color rgba(182,181,181,1)
+    width 8px
+    height 8px
+    border-radius 4px
+  .el-picker-panel
+    &.is-plain:focus, .el-button.is-plain:hover
+      background-color hover-background-color
+      border 1px solid hover-border-color
+      color hover-text-color
+      box-shadow 0 0 4px hover-box-shadow
+  .el-switch
+    .common-switch
+      .el-switch__label
+        position absolute
+        display none
+        color #fff
+        width 50px
+        &.is-active
+          display block
+      .el-switch__label--right
+        z-index 1
+        right 11px
+      .el-switch__label--left
+        z-index 1
+        left 10px
+      .el-switch__core
+        width 50px
+    &.is-checked
+      .el-switch__core
+        border-color light-border-color
+        background-color light-border-color
+
+  .el-textarea
+    .el-textarea__inner
+      &:focus
+        border-color weight-border-color
+common-list-table-css()
+  > .el-table
+    line-height 20px
+    .striped, .table-row, thead tr th
+      background #f1f8ff
+    .cell
+      text-align center
+    img
+      display inline-block
+      vertical-align middle
+      width 44px
+      height 44px
+      border-radius 44px
+    .header-cell
+      .cell
+        color #687E99
+        background #f1f8ff
+    .el-button
+      border unset
+      margin 0 2px
+      padding 0
+      color highlight-text-color
+      background-color unset
+      &:hover
+        box-shadow unset
+
+    .el-tag
+      color highlight-text-color
+common-list-pagination-css()
+  .el-input
+    width 90px
+    .el-input__inner
+      height 30px
+      line-height 30px
+common-vue-echarts-css()
+  .echarts
+    width 100%
+    height 100%
+    >div
+      width 100%
+      height 100%
+common-list-page-upload-css()
+  .avatar-uploader
+    .el-upload
+      border 1px solid #d9d9d9
+      border-radius 100px
+      cursor pointer
+      position relative
+      overflow hidden
+      &:hover
+        border-color hover-border-color
+  .avatar
+    width 100px
+    height 100px
+    display block
+  .avatar2
+    width 70px
+    height 70px
+    cursor pointer
+  .tip-message
+    text-align center
+    height 27px
+    line-height 27px
+    font-size 9px
+    color #BBC2D0
+  .button-upload
+    display inline-block
+    margin 0 10px
+
+common-list-page-top-css()
+  > .top , >.left>.top
+    > .left
+      > .search-input
+        width 160px
+    .el-input
+      width 120px
+    .el-date-editor
+      width 230px
+    .el-date-editor--datetimerange.el-input__inner
+      width 300px
+    display flex
+    justify-content space-between
+    width 100%
+    height 64px
+    line-height 64px
+    padding 0 15px
+    font-size 14px
+    color #A7A5C2
+    overflow-x auto
+    overflow-y hidden
+    white-space nowrap
+    > .left, > .right
+      white-space nowrap
+    > .left
+      margin-right 10px
+      overflow-x auto
+      overflow-y hidden
+      > section, >section>span, > span
+        display inline-block
+        margin 0 3px 0 6px
+    > .right
+      margin-left 10px
+common-list-page-middle-css()
+  > .middle
+    height calc(100% - 114px)
+    common-list-table-css()
+common-list-page-bottom-css()
+  > .bottom
+    text-align right
+    padding-right 15px
+    height 50px
+    line-height 50px
+    padding-top 11px
+    common-list-pagination-css()
+
+form-page-el-form-css()
+  > .items
+    width 100%
+    .el-form-item
+      width 100%
+      > .el-form-item__content
+        width calc(100% - 100px)
+        max-width 380px
+        .el-input, .el-select, .el-date-editor, .el-autocomplete, .tree-select
+          width 100%
+        .el-radio-group
+          line-height 50px
+          .el-radio
+            margin 0 20px 0 0
+    .el-form-item__error
+      position unset
+      width 100%
+      height 20px
+      line-height 20px
+      padding 0 0 0 5px
+      text-align left
+    .el-input
+      position unset
+
+common-form-page-css()
+  .field-blocks
+    padding-top 20px
+    height calc(100% - 60px)
+    overflow auto
+    display flex
+    justify-content flex-start
+    flex-wrap wrap
+    min-width 900px
+    > .field-block
+      padding 20px
+      border-radius 10px
+      display flex
+      width 50%
+      min-width 400px
+      > .left, > .right
+        display inline-block
+        height 100%
+        vertical-align top
+      > .left
+        width 30%
+        min-width 100px
+        max-width 200px
+        text-align center
+        padding-top 30px
+      > .right
+        flex 1
+        max-width 90%
+        margin auto
+        form-page-el-form-css()
+        .el-input
+          width 370px
+        > .title
+          font-size 16px
+          color #464749
+          font-weight 550
+          margin-bottom 30px
+  .operation-block
+    box-shadow 0 -1px 9px 0px rgba(181,181,181,0.28)
+    text-align center
+    height 60px
+    line-height 62px

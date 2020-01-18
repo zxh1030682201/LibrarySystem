@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-403.000000, -21.000000)">
+            <g id="logo" transform="translate(403.000000, 21.000000)">
+                <circle id="Oval-3-Copy" fill="#FFFFFF" fill-rule="nonzero" cx="15" cy="15" r="15"></circle>
+                <text id="Z-Copy" transform="translate(15.245191, 15.441343) rotate(-30.000000) translate(-15.245191, -15.441343) " font-family="cannonball, cannon ball" font-size="24" font-weight="normal" fill="#0D8CA4">
+                    <tspan x="8.19050303" y="23.941343">Z</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
